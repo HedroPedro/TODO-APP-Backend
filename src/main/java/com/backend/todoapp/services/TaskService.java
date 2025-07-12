@@ -29,4 +29,12 @@ public class TaskService {
     public Task getTaskById(Long id) {
         return repository.findById(id).orElseThrow();
     }
+
+    public Task updateTaskById(Long id, Task task) {
+        Task toUpdate = repository.findById(id).orElseThrow();
+        toUpdate.setIsDone(task.getIsDone());
+        toUpdate.setDoneDateTime(task.getDoneDateTime());
+        toUpdate.setDescription(task.getDescription());
+        return repository.save(toUpdate);
+    }
 }

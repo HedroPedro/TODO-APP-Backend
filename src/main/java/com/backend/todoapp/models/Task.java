@@ -40,11 +40,11 @@ public class Task {
         return name;
     }
 
-    public void setdescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getdescription() {
+    public String getDescription() {
         return description;
     }
 
@@ -54,6 +54,18 @@ public class Task {
 
     public Boolean getIsDone() {
         return isDone;
+    }
+
+    public LocalDateTime getCreationDateTime() {
+        return creationDateTime;
+    }
+
+    public LocalDateTime getDoneDateTime() {
+        return doneDateTime;
+    }
+
+    public void setDoneDateTime(LocalDateTime doneDateTime) {
+        this.doneDateTime = doneDateTime;
     }
 
     public Task(String name, String description) {
