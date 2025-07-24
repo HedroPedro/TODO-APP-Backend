@@ -27,8 +27,8 @@ public class TaskController {
     private TaskService taskService;
 
     @GetMapping(name = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Task> getTasks() {
-        return taskService.getTasks();
+    public ResponseEntity<List<Task>> getTasks() {
+        return new ResponseEntity<>(taskService.getTasks(), HttpStatus.OK);
     }
 
     @PostMapping(name = "/", produces = MediaType.APPLICATION_JSON_VALUE)
